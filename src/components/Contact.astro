@@ -1,4 +1,6 @@
 ---
+const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
+
 const socials = [
   {
     label: "GitHub",
@@ -25,7 +27,7 @@ const socials = [
       </div>
 
       <form id="contact-form" class="space-y-5">
-        <input type="hidden" name="access_key" value="1e13f79f-dc65-4ecc-8689-3e5e9aca6f99" />
+        <input type="hidden" name="access_key" value={accessKey} />
         <input type="hidden" name="subject" value="New message from portfolio" />
 
         <div class="grid sm:grid-cols-2 gap-5">
