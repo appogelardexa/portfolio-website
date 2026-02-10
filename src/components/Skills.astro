@@ -1,0 +1,59 @@
+---
+const categories = [
+  {
+    title: "Automation",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    skills: ["Zapier", "n8n", "API Integrations", "Lindy.ai", "Selenium", "ADB Utils"],
+  },
+  {
+    title: "Programming",
+    icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
+    skills: ["Python", "SQL", "Apache Airflow", "DBT", "PySpark"],
+  },
+  {
+    title: "Data & Analytics",
+    icon: "M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4",
+    skills: ["PostgreSQL", "Hive", "Snowflake", "BigQuery", "Hadoop", "Apache Kafka", "Spark", "Data Modeling"],
+  },
+  {
+    title: "AI & Design",
+    icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
+    skills: ["OpenAI", "Gemini", "Prompt Engineering", "Photoshop", "Canva"],
+  },
+  {
+    title: "Productivity",
+    icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
+    skills: ["Google Workspace", "Slack", "Notion", "Asana", "ClickUp", "Monday.com"],
+  },
+];
+---
+
+<section id="skills">
+  <div class="section-container">
+    <span class="section-label">02 — Skills</span>
+    <h2 class="section-heading">Tech Stack</h2>
+    <p class="section-subheading">Technologies and tools I work with regularly.</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {
+        categories.map((cat) => (
+          <div class="glass-card p-6">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-9 h-9 rounded-lg bg-accent-500/15 flex items-center justify-center">
+                <svg class="w-4 h-4 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={cat.icon} />
+                </svg>
+              </div>
+              <h3 class="text-white font-semibold text-sm">{cat.title}</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              {cat.skills.map((skill) => (
+                <span class="tag">{skill}</span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

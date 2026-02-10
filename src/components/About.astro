@@ -1,0 +1,52 @@
+---
+const highlights = [
+  { value: "3+", label: "Years Experience" },
+  { value: "15+", label: "Projects Delivered" },
+  { value: "20+", label: "Technologies" },
+];
+---
+
+<section id="about">
+  <div class="section-container">
+    <span class="section-label">01 — About</span>
+    <h2 class="section-heading">About Me</h2>
+    <p class="section-subheading">A bit about my background and what drives me.</p>
+
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
+      <div class="lg:col-span-3 space-y-5 text-surface-300 leading-relaxed max-w-2xl">
+        <p>
+          I'm a <strong class="text-white font-semibold">multidisciplinary technical professional</strong> with
+          expertise in workflow automation, data engineering, and digital
+          operations. I specialize in <strong class="text-white font-semibold">no-code/low-code platforms</strong> like
+          n8n and Zapier, API integrations, and process optimization.
+        </p>
+        <p>
+          My day-to-day involves building automated systems, designing
+          <strong class="text-white font-semibold">ETL pipelines</strong> with tools like Apache Airflow and dbt, and
+          writing Python to solve real business problems. I've eliminated
+          manual workloads, <strong class="text-white font-semibold">replaced entire VA teams with automation</strong>,
+          and helped businesses achieve 24/7 operational continuity.
+        </p>
+        <p>
+          I hold a <strong class="text-white font-semibold">BS in Computer Science (Cum Laude)</strong> from Mindanao
+          State University, where I was awarded Best in Thesis and Programmer
+          of the Year. I've also taught programming, data structures, and
+          databases as a Computer Science Instructor.
+        </p>
+      </div>
+
+      <div class="lg:col-span-2 flex flex-col gap-4">
+        {
+          highlights.map((item) => (
+            <div class="glass-card p-6 text-center">
+              <div class="text-3xl font-bold text-accent-400 mb-1 tracking-tight">
+                {item.value}
+              </div>
+              <div class="text-sm text-surface-400">{item.label}</div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

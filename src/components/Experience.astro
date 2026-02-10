@@ -1,0 +1,72 @@
+---
+const experiences = [
+  {
+    role: "Automation Specialist",
+    company: "Ardexa.ai (Remote)",
+    period: "Apr 2025 — Present",
+    description:
+      "Built comprehensive hiring automation, a custom Sales Score Bot, and end-to-end workflow automations reducing manual workload and enabling 24/7 business continuity across core operations.",
+    tech: ["Zapier", "n8n", "Slack", "API Integrations"],
+  },
+  {
+    role: "Python Developer",
+    company: "New Stars Solutions, Inc.",
+    period: "Jul 2024 — Jun 2025",
+    description:
+      "Developed scalable ETL workflows with Apache Airflow, transformed data using Pandas, optimized pipelines across PostgreSQL/Hive/Hadoop, and built custom scraping tools with Selenium.",
+    tech: ["Python", "Airflow", "PostgreSQL", "Hive", "Selenium", "Elasticsearch"],
+  },
+  {
+    role: "Freelance Automation Specialist",
+    company: "Sunrise Leads / FDG / Sales & Marketing Co. (Remote)",
+    period: "Mar 2025 — Jun 2025",
+    description:
+      "Led client onboarding, translated business problems into workflow solutions, and built automation pipelines eliminating 70% of repetitive tasks. Reduced data processing from days to under 1 hour.",
+    tech: ["n8n", "Zapier", "Asana", "Python", "Photoshop"],
+  },
+  {
+    role: "Computer Science Instructor",
+    company: "Mindanao State University",
+    period: "Sep 2022 — Jun 2024",
+    description:
+      "Taught programming, data structures, and databases — increasing student exam pass rates by 50%. Mentored thesis students and guided a team in IDEA Pitch competition at regional and national levels.",
+    tech: ["Python", "SQL", "Data Structures", "WordPress"],
+  },
+];
+---
+
+<section id="experience">
+  <div class="section-container">
+    <span class="section-label">04 — Career</span>
+    <h2 class="section-heading">Experience</h2>
+    <p class="section-subheading">Where I've worked and what I've built.</p>
+
+    <div class="space-y-5">
+      {
+        experiences.map((exp) => (
+          <div class="glass-card p-7">
+            <div class="mb-4">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-1">
+                <h3 class="text-white font-semibold text-base">
+                  {exp.role}
+                </h3>
+                <span class="text-xs text-surface-400 font-mono bg-surface-800 px-3 py-1 rounded-full border border-surface-700/50 w-fit">
+                  {exp.period}
+                </span>
+              </div>
+              <p class="text-accent-400 text-sm mt-1">{exp.company}</p>
+            </div>
+            <p class="text-surface-400 text-sm leading-relaxed mb-4 max-w-2xl">
+              {exp.description}
+            </p>
+            <div class="flex flex-wrap gap-2">
+              {exp.tech.map((t) => (
+                <span class="tag">{t}</span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
