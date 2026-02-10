@@ -4,6 +4,7 @@
 
 @layer base {
   html {
+    font-size: clamp(1rem, 0.85rem + 0.5vw, 1.5rem);
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
