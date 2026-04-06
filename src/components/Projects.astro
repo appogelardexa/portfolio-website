@@ -1,6 +1,78 @@
 ---
 const projects = [
   {
+    title: "AI Invoice Processing System",
+    description:
+      "End-to-end AI pipeline that ingests invoice emails, extracts and validates structured data, and syncs results into financial systems like QuickBooks and Entrata. Built with modular validation and exception handling for reliable, scalable processing.",
+    tech: ["n8n", "OpenAI", "LlamaParse", "Supabase", "Gmail", "Outlook", "QuickBooks", "Entrata", "APIs"],
+    github: null,
+    live: null,
+  },
+  {
+    title: "AI Ticket Triage & Support Automation System",
+    description:
+      "Backend system that processes support tickets from email and APIs, using AI to classify, deduplicate, and route requests while managing attachments and tracking status through a centralized Supabase database.",
+    tech: ["n8n", "OpenAI", "Supabase", "Gmail", "Outlook", "Webhooks", "APIs"],
+    github: null,
+    live: null,
+  },
+  {
+    title: "Lead Ingestion & Qualification System",
+    description:
+      "Centralized pipeline that aggregates leads from multiple sources, filters spam using AI, and standardizes data before inserting into CRM and triggering downstream automation workflows.",
+    tech: ["n8n", "OpenAI", "APIs", "Google Sheets", "Zapier", "Slack"],
+    github: null,
+    live: null,
+  },
+  {
+    title: "Voice AI Call Routing Agent",
+    description:
+      "AI-powered voice agent that handles inbound calls, collects customer information, qualifies intent, and routes calls to the appropriate department while triggering automated follow-ups and summaries.",
+    tech: ["VAPI", "OpenAI", "Twilio", "n8n", "APIs"],
+    github: null,
+    live: null,
+  },
+  {
+    title: "AI Sales Call Scoring & Coaching System",
+    description:
+      "System that analyzes sales calls using AI to generate structured performance scores and actionable coaching insights, helping teams improve conversion rates and standardize evaluation.",
+    tech: ["OpenAI", "Whisper", "n8n", "Google Sheets", "Slack"],
+    github: null,
+    live: null,
+  },
+  {
+    title: "Lead Follow-Up Automation System",
+    description:
+      "Multi-step automation that nurtures leads through timed follow-ups across messaging and email channels, improving engagement and eliminating manual outreach.",
+    tech: ["n8n", "OpenPhone", "Google Sheets", "Slack", "APIs", "GHL"],
+    github: null,
+    live: null,
+  },
+  {
+    title: "Lead Response SLA Monitoring System",
+    description:
+      "Real-time system that tracks lead response times and alerts teams if leads are not contacted within defined SLAs, enabling faster engagement and reducing missed opportunities.",
+    tech: ["n8n", "Zapier", "Slack", "OpenPhone"],
+    github: null,
+    live: null,
+  },
+  {
+    title: "Project Intake & Task Automation System",
+    description:
+      "Automation that converts form submissions into structured ClickUp tasks with dynamic field mapping, conditional subtask creation, and real-time synchronization with tracking systems.",
+    tech: ["n8n", "ClickUp", "Google Forms", "Google Sheets", "Webhooks"],
+    github: null,
+    live: null,
+  },
+  {
+    title: "GHL CRM & Marketing Automation System",
+    description:
+      "Built a CRM and marketing automation system using GoHighLevel to manage pipelines, automate follow-ups, and execute email/SMS campaigns for end-to-end lead lifecycle management.",
+    tech: ["GHL", "n8n", "APIs", "Email Automation", "SMS Automation"],
+    github: null,
+    live: null,
+  },
+  {
     title: "Hiring Automation System",
     description:
       "End-to-end recruitment automation — auto-sending applicant emails, organizing submissions into hiring folders, and updating Slack with real-time candidate pipeline tracking.",
@@ -24,13 +96,39 @@ const projects = [
     github: null,
     live: null,
   },
+
+];
+
+const otherProjects = [
   {
-    title: "Sales Score Bot",
+    title: "Review Automation System",
     description:
-      "Custom bot evaluating inbound call quality, providing actionable insights for lead handling and marketing strategy refinement with automated scoring workflows.",
-    tech: ["n8n", "Zapier", "API Integrations", "OpenAI"],
-    github: null,
-    live: null,
+      "Automated system that sends targeted review requests via SMS and email based on predefined conditions, helping increase positive customer reviews and improve online reputation.",
+    tech: ["n8n", "OpenPhone", "Slack", "Google Sheets", "APIs"],
+  },
+  {
+    title: "Cleaning Reminder System",
+    description:
+      "Automation that sends scheduled reminders to customers and cleaning staff before appointments, reducing no-shows and improving coordination across operations.",
+    tech: ["n8n", "Booking Koala", "OpenPhone", "Slack", "Google Sheets", "APIs"],
+  },
+  {
+    title: "Clock-In Monitoring & Escalation System",
+    description:
+      "System that monitors staff clock-ins for scheduled jobs and triggers timed reminders and Slack alerts if delays occur, improving accountability and operational visibility.",
+    tech: ["n8n", "Slack", "Booking Koala", "OpenPhone", "APIs"],
+  },
+  {
+    title: "Social Media Automation System",
+    description:
+      "Automation system that publishes content across multiple social media platforms from a single workflow, ensuring consistent posting and reducing manual effort.",
+    tech: ["n8n", "APIs", "Facebook", "Instagram", "LinkedIn", "GMB", "Google Sheets"],
+  },
+  {
+    title: "Booking Event Notification System",
+    description:
+      "Automation that listens to real-time events from Booking Koala (new lead, booking, updates, cancellations, and more) and instantly sends structured notifications to Slack for operational visibility and faster response.",
+    tech: ["n8n", "Booking Koala", "Slack", "Webhooks", "APIs"],
   },
 ];
 ---
@@ -67,5 +165,81 @@ const projects = [
         ))
       }
     </div>
+
+    <!-- Other Automation Systems collapsible -->
+    <div class="mt-10">
+      <button
+        id="other-projects-toggle"
+        class="flex items-center gap-3 text-surface-300 hover:text-white transition-colors group"
+        aria-expanded="false"
+        aria-controls="other-projects"
+      >
+        <span class="text-sm font-medium">Other Automation Systems</span>
+        <svg
+          id="other-projects-chevron"
+          class="w-4 h-4 transition-transform duration-300"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      <div
+        id="other-projects"
+        class="grid md:grid-cols-2 gap-5 overflow-hidden transition-all duration-500"
+        style="max-height: 0; opacity: 0; margin-top: 0;"
+      >
+        {
+          otherProjects.map((project) => (
+            <div class="glass-card p-7 flex flex-col">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-lg bg-accent-500/15 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                  </svg>
+                </div>
+                <h3 class="text-white font-semibold text-lg">
+                  {project.title}
+                </h3>
+              </div>
+              <p class="text-surface-400 text-sm leading-relaxed mb-5 flex-grow max-w-lg">
+                {project.description}
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {project.tech.map((t) => (
+                  <span class="tag">{t}</span>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+  const toggle = document.getElementById('other-projects-toggle');
+  const panel = document.getElementById('other-projects');
+  const chevron = document.getElementById('other-projects-chevron');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    if (isOpen) {
+      panel!.style.maxHeight = '0';
+      panel!.style.opacity = '0';
+      panel!.style.marginTop = '0';
+      toggle.setAttribute('aria-expanded', 'false');
+      chevron!.style.transform = 'rotate(0deg)';
+    } else {
+      panel!.style.maxHeight = panel!.scrollHeight + 'px';
+      panel!.style.opacity = '1';
+      panel!.style.marginTop = '1.25rem';
+      toggle.setAttribute('aria-expanded', 'true');
+      chevron!.style.transform = 'rotate(180deg)';
+    }
+  });
+</script>
